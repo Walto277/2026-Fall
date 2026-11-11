@@ -23,9 +23,7 @@ public final class Constants
   public static final Matter CHASSIS    = new Matter(new Translation3d(0, 0, Units.inchesToMeters(8)), ROBOT_MASS);
   public static final double LOOP_TIME  = 0.13; //s, 20ms + 110ms sprk max velocity lag
   public static final double MAX_SPEED  = Units.feetToMeters(14.5);
-  public static final double SCALE_ROTATION = 0.6; // Multiplier for rotation input to reduce sensitivity
-  public static final double SCALE_TRANSLATION = 0.8; // Multiplier for translation input to reduce sensitivity
-
+  // Maximum speed of the robot in meters per second, used to limit acceleration.
 
 //  public static final class AutonConstants
 //  {
@@ -41,41 +39,6 @@ public final class Constants
     public static final double WHEEL_LOCK_TIME = 10; // seconds
   }
 
-public static final class FuelConstants {
-    // Motor controller IDs for Fuel Mechanism motors
-    public static final int LEFT_SHOOTER_MOTOR_ID = 9;
-    public static final int RIGHT_SHOOTER_MOTOR_ID = 10;
-    public static final int INDEXER_MOTOR_ID = 11;
-
-    // Current limit for fuel mechanism motors.
-    public static final int INDEXER_MOTOR_CURRENT_LIMIT = 80;
-    public static final int SHOOTER_MOTOR_CURRENT_LIMIT = 80;
-
-    // All values likely need to be tuned based on your robot
-    public static final double INDEXER_INTAKING_PERCENT = -0.5; //-.8 
-    public static final double INDEXER_LAUNCHING_PERCENT = 0.4;//.6;
-    public static final double INDEXER_SPIN_UP_PRE_LAUNCH_PERCENT = -0.5;
-
-    public static final double SHOOTER_INTAKING_VELOCITY = 3000;
-    public static final double SHOOTER_SHOOTING_VELOCITY = 5000;
-    public static final double SHOOTER_EJECT_PERCENT = -0.8;
-
-    public static final double SPIN_UP_SECONDS = 0.65;
-  //  public static final double SHOOTER_INTAKING_SETPOINT_RPM = -3000;
-  //  public static final double SHOOTER_LAUNCHING_SETPOINT_RPM = 5000;
-    public static final double SHOOTER_EJECT_VELOCITY = -3000;
-  }
-
-  public static final class ClimbConstants {
-    // Motor controller IDs for Climb motor
-    public static final int CLIMBER_MOTOR_ID = 12;
-
-    // Current limit for climb motor
-    public static final int CLIMBER_MOTOR_CURRENT_LIMIT = 40;
-    // Percentage to power the motor both up and down
-    public static final double CLIMBER_MOTOR_DOWN_PERCENT = -0.8;
-    public static final double CLIMBER_MOTOR_UP_PERCENT = 0.8;
-  }
   public static class OperatorConstants
   {
 
