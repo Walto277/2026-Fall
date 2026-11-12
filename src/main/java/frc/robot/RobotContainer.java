@@ -4,8 +4,11 @@
 
 package frc.robot;
 
+import java.io.File;
+
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.auto.NamedCommands;
+
 import edu.wpi.first.math.controller.ProfiledPIDController;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -23,7 +26,6 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.subsystems.swervedrive.SwerveSubsystem;
-import java.io.File;
 import swervelib.SwerveInputStream;
 
 /**
@@ -215,4 +217,9 @@ public class RobotContainer
   {
     m_drivebase.setMotorBrake(brake);
   }
+    public void periodic(){
+    SmartDashboard.putNumber("Odometry/X", m_drivebase.getPose().getX());
+    SmartDashboard.putNumber("Odometry/Y", m_drivebase.getPose().getY());
+    SmartDashboard.putNumber("Odometry/Yaw/Heading", m_drivebase.getPose().getRotation().getDegrees());
+    }
 }
